@@ -6,12 +6,7 @@ describe('Login Test Suite', () => {
 
     // TC01 - Valid Login
     it('TC01 - should login successfully with valid credentials', () => {
-        cy.get('[data-test="username"]')
-            .type('standard_user')
-        cy.get('[data-test="password"]')
-            .type('secret_sauce')
-        cy.get('[data-test="login-button"]')
-            .click()
+        cy.login('standard_user', 'secret_sauce')
 
         cy.url()
             .should('include', '/inventory.html')
@@ -30,6 +25,9 @@ describe('Login Test Suite', () => {
 
         cy.get('[data-test="error"]')
             .should('be.visible')
+
+        cy.get('[data-test="error"]')
+            .should('contain.text', 'Username and password do not match any user in this service')
     })
 
     // TC03 - Invalid Username
