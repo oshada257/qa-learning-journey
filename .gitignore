@@ -1,0 +1,22 @@
+node_modules/
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+*.log
+
+# Production
+build/
+dist/
+
+# Coverage
+coverage/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
